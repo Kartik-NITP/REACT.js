@@ -28,6 +28,11 @@ address{
     color:#0f0f0f;
 }
 
-.navbar-dark {
-    background-color: #512DA8;
+.color-header {
+    background-color:black;
+}
+.color-home{
+    background-color: lightblue;
+    width: 100vw;
+    
 }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {Navbar,NavbarBrand} from 'reactstrap';
 import Menu from './MenuComp';
 import Header from './HeaderComponents';
 import Contact from './ContactComponent';
+import About from'./AboutComponent';
 import Footer from './FooterComponents';
 import Dishdetail from './Dishdetail';
 import Home from './HomeComponent';
@@ -24,8 +24,8 @@ class Main extends Component {
              selectedDish : null
         };
     }
-    onDishSelect(use_dish){
-        this.setState({ selectedDish: use_dish});
+    onDishSelect(dishId){
+        this.setState({ selectedDish: dishId});
 
     }
     
@@ -52,6 +52,7 @@ class Main extends Component {
 <Switch>
               <Route path='/home' component={HomePage} />
               <Route path='/menu/:dishId' component={DishWithId} />
+              <Route path='/aboutus' component={() => <About leaders={this.state.leaders} />} />
               <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
               <Route exact path='/contactus' component={Contact} /> 
               <Redirect to="/home" />
